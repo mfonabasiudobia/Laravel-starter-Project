@@ -21,7 +21,7 @@
     @stack('header')
 
     @livewireStyles
-    @powerGridStyles
+    {{-- @powerGridStyles --}}
 
 </head>
 
@@ -47,12 +47,13 @@
 
 
 
-    @powerGridScripts
+    {{-- @powerGridScripts --}}
     @livewireScripts
     @toastScripts
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://unpkg.com/alpinejs@3.9.0/dist/cdn.min.js"></script>
     <script defer src="{{asset('js/js.js')}}?v={{uniqid()}}"></script>
 
     @stack("script")

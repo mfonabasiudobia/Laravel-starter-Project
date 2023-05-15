@@ -11,6 +11,8 @@
         "laravel/sanctum": "^3.0",
         "laravel/tinker": "^2.7",
         "livewire/livewire": "^2.12",
+        "power-components/livewire-powergrid": "^3.7",
+        "spatie/laravel-permission": "^5.10",
         "usernotnull/tall-toasts": "^1.7"
     },
     "require-dev": {

@@ -23,16 +23,16 @@ body {
     }
 
     .sidebar {
-        @apply pt-5 overflow-y-auto h-screen transition-all z-50 scrollbar shadow-xl relative md:sticky top-0;
+        @apply pt-5 overflow-y-auto h-screen transition-all z-50 scrollbar border relative md:sticky top-0;
     }
 
     .sidebar-wrapper {
-        @apply bg-black fixed bg-opacity-50 top-0 left-0 w-screen md:w-0 min-h-screen z-[100];
+        @apply bg-light fixed bg-opacity-50 top-0 left-0 w-screen md:w-0 min-h-screen z-[100];
     }
 
 
     .sidebar a {
-        @apply block px-4 py-3 text-xs relative hover:bg-black hover:bg-opacity-50 space-x-2 text-gray-300;
+        @apply block px-4 py-3 text-sm relative hover:bg-blue-100 hover:bg-opacity-50 space-x-2;
     }
 
     /*.sidebar a .las {
@@ -68,11 +68,11 @@ body {
     }
 
     .sidebar .active {
-        @apply bg-opacity-50 bg-black;
+        @apply bg-opacity-50 bg-blue-100;
     }
 
     .sidebar .active>a {
-        @apply bg-opacity-70 bg-black;
+        @apply bg-opacity-70 bg-blue-100;
     }
 
     .sidebar .list-2 a {

@@ -51,7 +51,9 @@ class AppHelper {
 
         if(!$file) return null;
 
-         return 'storage/' .$file->storeAs($filePath, Str::uuid() . '.' .$file->extension());
+        $fullFilePath = $directory = date("Y")."/".date("m")."/".date("d"). '/' . $filePath;
+        
+        return 'storage/' .$file->storeAs($fullFilePath, Str::uuid() . '.' .$file->extension());
     }
     
 

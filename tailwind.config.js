@@ -13,8 +13,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'primary' : '#172554',
-        'light' : '#EDF1F5',
+        'primary' : '#1565EA',
+        'light' : '#F8F8FA',
         'dark' : '#2A2E37',
         'link' : '#0a66c2',
         'success' : '#00C292',

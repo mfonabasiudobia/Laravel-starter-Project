@@ -10,6 +10,10 @@ class Login extends BaseComponent
 
     public $email, $password, $rm;
 
+    // public function mount(){
+    //     dd(bcrypt(123456));
+    // }
+
     public function submit(){
 
         if(AuthRepository::login((object) [ 'email' => $this->email, 'password' => $this->password, 'rm' => $this->rm])){
@@ -24,7 +28,6 @@ class Login extends BaseComponent
         auth()->logout();
         if(!auth()->check()) return redirect()->route('admin.login');
     }
-
 
     public function render()
     {

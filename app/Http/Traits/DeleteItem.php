@@ -11,6 +11,8 @@ trait DeleteItem{
         $data->model::destroy($data->id);
         toast()->success("Item has been deleted")->push(); 
         $this->key =  rand(0, 100); //refresh table by assigning new key to livewire
+
+        $this->emit('refresh');
     }
 
     public function forceDelete(array $detail){

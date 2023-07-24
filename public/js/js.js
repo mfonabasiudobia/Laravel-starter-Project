@@ -49,8 +49,39 @@ config = {
         altFormat: "F j, Y"
 }
 
+
 flatpickr(".custom-date",{...config});
-flatpickr(".custom-date-from-today",{...config, maxDate:'today'});
+flatpickr(".custom-time",{ 
+  noCalendar : true, 
+  enableTime : true, 
+  dateFormat: "H:i", 
+  time_24hr: false, 
+  minTime: "00:00",
+  maxTime: "23:59",
+  minuteIncrement: 1,
+  altFormat : "h:i K",
+  disable: [],
+  onChange: function(selectedDates, dateStr, instance) {
+    const selectedTime = selectedDates[0];
+
+    // Reset the input and remove the background color
+    instance.input.classList.remove("bg-danger");
+
+    // Check if the selected time falls within the restricted ranges
+    instance.config.disable.forEach(function(range) {
+      const startTime = instance.parseDate(range.from, "H:i");
+      const endTime = instance.parseDate(range.to, "H:i");
+
+      if (selectedTime >= startTime && selectedTime <= endTime) {
+        instance.input.value = "Not available";
+        instance.input.classList.add("bg-danger");
+      }
+    });
+  }
+});
+
+
+flatpickr(".custom-date-from-today",{...config, minDate:'today'});
 flatpickr(".custom-date-range",{...config,mode: "range"});
 flatpickr(".custom-datetime",{...config, enableTime: true, dateFormat : "Y-m-d H:i", altFormat: "F j, Y at h:i K", minDate: 'today'});
 // flatpickr(".custom-date-from-today-range",{...config,mode: "range",minDate:'today'}); 
